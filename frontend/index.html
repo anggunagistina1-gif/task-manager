@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Task Manager</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#7c83ff">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">TaskFlow</div>
+
+    <div class="nav-right">
+        <button class="notif-btn">🔔</button>
+        <button id="openModal" class="add-btn">+ Add Task</button>
+    </div>
+</nav>
+
+<section class="stats">
+    <div class="stat-card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Pending</h3>
+        <p id="pendingTasks">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>In Progress</h3>
+        <p id="progressTasks">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+    </div>
+</section>
+
+<section class="controls">
+    <input type="text" placeholder="Search task..." id="searchInput">
+
+    <select id="filterStatus">
+        <option value="all">All Tasks</option>
+        <option value="pending">Pending</option>
+        <option value="progress">Progress</option>
+        <option value="completed">Completed</option>
+    </select>
+</section>
+
+<section id="taskContainer" class="task-grid"></section>
+
+<div id="taskModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Add / Edit Task</h2>
+
+        <form id="taskForm">
+            <input type="hidden" id="taskId">
+
+            <input type="text" id="title" placeholder="Task title" required>
+
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <select id="status">
+                <option value="pending">Pending</option>
+                <option value="progress">Progress</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <button type="submit">Save Task</button>
+        </form>
+
+        <button id="closeModal">Close</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
