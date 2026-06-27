@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/tasks";
+const API = "https://task-manager-production-7742.up.railway.app/tasks";
 
 const taskContainer = document.getElementById("taskContainer");
 const taskForm = document.getElementById("taskForm");
